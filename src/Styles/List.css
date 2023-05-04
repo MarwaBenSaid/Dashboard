@@ -1,0 +1,153 @@
+.container {
+    margin-top: 0px;
+    height: 100%;
+    text-decoration : none;
+  }h1{
+    margin-left: 200px;
+    margin-top: 200px;
+  }
+  .title{
+  position: absolute;
+  width: 145px;
+  height: 54px;
+  margin-left:270px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 54px;
+  display: flex;
+  align-items: center;
+  
+  
+  color: #2B47D6;
+  }
+  .search-container {
+    margin-top: 20px;
+    margin-left: 430px;
+    margin-right: 250px;
+    align-items: center;
+    background: #2B47D6;
+  }
+  
+  .form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .input[type=text] {
+      width: 600px;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 25px;
+      font-size: 16px;
+      margin-right: 5px;
+    }
+    .btn-add {
+      
+      background-color: #2B47D6;
+      border:white;
+      color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        cursor: pointer;
+        margin-left: 980px;
+        margin-top: 1px;
+        border-radius: 10px;
+        width: 220px;
+        height: 48px; 
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    
+      }i {
+        margin-right: 15px; 
+      }
+      .btn-add:hover {
+        background-color:#F9FAFF;
+      color:#2B47D6;
+      border: #2B47D6;
+      }
+  /* ProjectList.css */
+  
+  .project-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 260px;
+   
+  }
+  
+  .project-card {
+    width: 272px;
+    height: 150px;
+    margin: 16px;
+    padding: 16px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid #99ABF0;
+    border-radius: 20px;
+    margin-top: 0;
+  }
+  
+  .project-card h5 {
+    width: 120px;
+  height: 20px;
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  
+  
+  color: #2B47D6;
+  
+  
+  /* Inside auto layout */
+  
+  flex: none;
+  order: 0;
+  margin-left: 10px;
+  white-space: nowrap;
+  }
+  
+  .project-card p {
+    width: 208px;
+  height: 84px;
+  
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  color: #4D6DE5;
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+  justify-content: center;
+  margin-left: 10px;
+  }
+  .card-title{
+    display: flex;
+    flex-direction: column;
+    justify-items:flex-end
+    
+  }
+  .icon-card{
+    margin-left: 20px;
+    white-space: nowrap;
+  }
+  

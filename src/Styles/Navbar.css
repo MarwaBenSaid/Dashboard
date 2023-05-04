@@ -1,0 +1,81 @@
+body{
+    background: #E9EDFC;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 16px;
+    gap: 16px;
+    height: 60px;
+    margin-left: 260px;
+    top:16px;
+    box-shadow: 0px 8px 16px rgba(0, 17, 81, 0.05);
+    border-radius: 10px;
+    margin-top: 16px;
+    background: #FFFFFF;
+    }
+    .dropdown{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 8px 8px 16px;
+        gap: 4px;
+        
+        width: 220px;
+        height: 48px;
+        
+        background: #F9FAFF;
+        border: 1.5px solid #E9EDFC;
+        border-radius: 10px;
+        color: #2B47D6;
+        flex-direction: column;   
+    }
+            .btn{
+                width: 220px;
+                height: 48px; 
+                border-radius: 10px;
+            }
+        
+          
+                     
+            .dropbtn{
+                color: #2B47D6;
+            }
+        
+            .img-profile {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                cursor: pointer;
+                border: 1px solid #2B47D6;
+                margin-left: 18px;
+            }
+    .dropdown-item{
+        color: #2B47D6;
+        left: 20px;
+        right: 0;
+        
+    }
+     
+    .account-user-name{
+            
+            
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+     
+        color: #2B47D6;
+        margin-left: 0;
+    }
+    
+    @media (min-width: 767.98px) {
+        .navbar {
+            
+            position: sticky;
+            z-index: 999;
+        }
+    }
