@@ -13,8 +13,8 @@ import {
 import "../Styles/List.css";
 import "../Styles/Add.css"
 import { Icon } from '@iconify/react';
-export default function Application() {
-    const [modal, setModal] = useState(false);
+export default function 
+() {  const [modal, setModal] = useState(false);
     const [unmountOnClose, setUnmountOnClose] = useState(true);
   
     const toggle = () => setModal(!modal);
@@ -29,10 +29,10 @@ export default function Application() {
           <div className="container-project mt-5">
           <div className="row ">
           <div className="col-lg-6">
-          <h1 className="title-project">Applications</h1>
+          <h1 className="title-project">Environments</h1>
           <button className='btn-add-project'  onClick={toggle}>
           <i><Icon icon="material-symbols:add-box"  /></i>
-            Add new Application
+            Add new Environment
           </button>
         
         <Modal className=" add-project-container mt-0 "  isOpen={modal} toggle={toggle} unmountOnClose={unmountOnClose}>
@@ -77,7 +77,7 @@ export default function Application() {
               <div className="project-list">
           
             <div className="project-card">
-              <h5 className='card-title row' >Application Title
+              <h5 className='card-title row' >Environment Title
               <i className="icon-card">
               <Icon icon="uiw:setting"  />
               </i> </h5>
@@ -86,7 +86,7 @@ export default function Application() {
               </p>
             </div>
             <div className="project-card">
-              <h5 className='card-title row' >Application Title
+              <h5 className='card-title row' >Project Title
               <i className="icon-card">
               <Icon icon="uiw:setting" />
               </i> </h5>
@@ -94,28 +94,28 @@ export default function Application() {
             </div>
             
             <div className="project-card">
-              <h5 className='card-title row' >Application Title
+              <h5 className='card-title row' >Environment Title
               <i className="icon-card">
               <Icon icon="uiw:setting" />
               </i> </h5>
               <p>Lorem ipsum dolor sit amet consectetur. Lacinia at nunc a diam dictum curabitur non nisl.</p>
             </div>
             <div className="project-card">
-              <h5 className='card-title row' >Application Title
+              <h5 className='card-title row' >Environment Title
               <i className="icon-card">
               <Icon icon="uiw:setting"  />
               </i> </h5>
               <p>Lorem ipsum dolor sit amet consectetur. Lacinia at nunc a diam dictum curabitur non nisl.</p>
             </div>
             <div className="project-card">
-              <h5 className='card-title row' >Application Title
+              <h5 className='card-title row' >Project Title
               <i className="icon-card">
               <Icon icon="uiw:setting"  />
               </i> </h5>
               <p mt-3>Lorem ipsum dolor sit amet consectetur. Lacinia at nunc a diam dictum curabitur non nisl.</p>
             </div>
             <div className="project-card">
-              <h5 className='card-title row' >Application Title
+              <h5 className='card-title row' >Project Title
               <i className="icon-card">
               <Icon icon="uiw:setting" />
               </i> </h5>

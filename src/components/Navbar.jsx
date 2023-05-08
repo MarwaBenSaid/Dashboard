@@ -1,41 +1,41 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import "../Styles/Navbar.css";
 import { Icon } from '@iconify/react';
 
+function Navbar()  {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
 
-class Navbar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dropdownOpen: false,
-    };
-    this.toggleDropdown = this.toggleDropdown.bind(this);
+  const toggleDropdown = () => {
+    setDropdownOpen(prevState => !prevState);
   }
+  const handleItemClick = (item) => {
+    setSelectedItem(item);
+    setDropdownOpen(false);}
 
-  toggleDropdown() {
-    this.setState(prevState => ({
-      dropdownOpen: !prevState.dropdownOpen,
-    }));
-  }
-
-  render() {
-    ;
-    return (
-     
-      <nav className="navbar">
-      <ul className="navbar-nav ml-auto">
-        <li className="nav-item dropdown no-arrow">
-          <a className="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" onClick={this.toggleDropdown}
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span className="mr-2 d-none d-lg-inline account-user-name text-gray-600 small">marwa</span>
-            <img className="img-profile rounded-circle" src="../assets/images/users/avatar-3.jpg" />
-            
+  return (
+    <nav className="navbar">
+      <ul className="navbar-nav">
+        <li className={`nav-item ${dropdownOpen ? 'show' : ''}`} style={{ position: 'relative' }}>
+          <a className="nav-link  dropbtn dropdown-toggle" href="#" id="userDropdown" role="button" onClick={toggleDropdown}
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded={dropdownOpen ? 'true' : 'false'}>
+            <span className="mr-2 d-none d-lg-inline account-user-name text-gray-600 small">foulen ben foulen</span>
+            <img className="img-profile rounded-circle" src="../assets/images/users/avatar-3.jpg" alt="Profile" />
           </a>
+          <div className={`dropdown-menu dropdown-menu-right  ${dropdownOpen ? 'show' : ''}`} aria-labelledby="userDropdown">
+            <a className="dropdown-item " href="">
+            <Icon className="icon" icon="mdi:user" />
+               Profile
+             </a>
+            <a className="dropdown-item" href="#">
+            <Icon className="icon" icon="ri:logout-box-line" />
+               Logout
+              </a>
+          </div>
         </li>
       </ul>
     </nav>
-    );
-  }
+  );
 }
 
 export default Navbar;

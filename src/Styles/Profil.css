@@ -1,0 +1,149 @@
+@import url('https://www.cufonfonts.com/font/euclid-circular-a');
+
+
+.img1{
+	width: 100px;
+	height: 100px;
+	align-items: center;
+	border-radius: 50%;
+	cursor: pointer;
+	border: 3px solid #2B47D6;
+	box-sizing: border-box;
+	margin-top: -60px;
+	justify-content: center;
+	margin-left : 180px;
+	}
+.card-profil {
+	font-size: 14px;
+	box-shadow: 0 4px 30px rgba(0,0,0,.05);
+	margin-left: 380px;
+	width: 455px;
+	height: 520px;
+	margin-top: 78px;
+	border-radius: 20px;
+	align-items: center;
+	background-color: white;
+
+}
+
+
+.card-body{
+	margin-left: 50px;
+}
+.form-label {
+	font-family: 'Euclid Circular A';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 13px;
+	line-height: 16px;
+	display: flex;
+	align-items: center;
+
+}
+
+.card-profil .form-control {
+	font-size: 14px;
+	box-shadow: none;
+	Width: 324px;
+    height: 41px;
+    background-color:#F2F4FF;
+    border: 1.5px solid #BAC6F5;
+    border-radius: 10px;
+
+	align-items: center;
+
+}
+
+.card-profil .form-control:focus {
+	border-color:#2B47D6;
+}
+
+.card-profil .btn {
+
+	font-weight: 500;
+    font-size: 16px;
+	box-shadow: 0 4px 10px var(--shadow-color);
+	display: flex;
+	color: white;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+/*padding: 16px 24px;*/
+gap: 8px;
+
+width: 130px;
+height: 41px;
+
+margin-top: 28px;
+margin-left: 192px;
+
+
+/* Primary */
+
+background: #2B47D6;
+border-radius: 10px;
+}
+
+.card-profil .btn:focus {
+	background-color: white;
+	border:#2B47D6;
+	color: #2B47D6;
+}
+
+.card-profil .btn:focus,
+.card-profil .btn:active:focus {
+	box-shadow: none !important;
+}
+
+
+.card-profil .btn-icon {
+	
+	background-color: #fff;
+	border: 1.5px solid #D0D0D0;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+    gap: 8px;
+
+    width: 320px;
+    height: 41px;
+    border-radius: 10px;
+
+
+}
+
+
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+	.card-profil {
+		width: 800px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.card-profil {
+		width: 400px;
+		margin-bottom: 40px;
+	}
+
+	.card-profil .row [class^="col-"] {
+		min-height: 480px;
+		
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.card-profil {
+		width: 100%;
+		margin-top: 20px;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.card-profil .padding {
+		padding: 30px;
+	}
+}

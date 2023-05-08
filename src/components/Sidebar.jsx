@@ -24,18 +24,8 @@ const Sidebar = ({children}) => {
         {
             path:"/project",
             name:"Project",
-            icon:<FaProjectDiagram/>,
-            childrens: [
-                {path:"/",
-                    name: "Facebook",
-                    icon: "bi-facebook"
-                },
-                {
-                    path:"/",
-                    name: "Twitter",
-                    icon: "bi-twitter"
-                }
-            ]
+            icon:<FaProjectDiagram/>
+                    
         },
         {
             path:"/code",
@@ -58,9 +48,9 @@ const Sidebar = ({children}) => {
         <div className="container">
            <div style={{width: isOpen ? "230px" : "50px"}} className="sidebar">
                <div className="top_section">
-                   <h1 style={{display: isOpen ? "block" : "none"}} className="logo">
+                   <h1 style={{display: isOpen ? "block" : "none"}} className="logo-sidebar">
    
-                <img src="../assets/images/Serops-Logo.png" alt="" className="logo " /> 
+                <img src="../assets/images/Serops-Logo.png" alt="" className="logo-sidebar " /> 
              
 
                    </h1>
@@ -74,6 +64,9 @@ const Sidebar = ({children}) => {
                            <div className="icon">{item.icon}</div>
                            <div style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</div>
                        </NavLink>
+                     
+                       
+                                
                    ))
                }
            </div>
