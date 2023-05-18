@@ -13,8 +13,7 @@ function Register(){
                     <div className="col-lg-6 col-md-12">
 						<div className="padding">
                        
-                               <RegisterPart2/>
-                            
+                             
                               
 						</div>
                         

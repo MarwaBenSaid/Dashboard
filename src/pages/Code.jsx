@@ -14,7 +14,7 @@ import "../Styles/List.css";
 import "../Styles/Add.css";
 import "../Styles/Code.css"
 import { Icon } from '@iconify/react';
-export default function 
+export default function Code
 () {  const [modal, setModal] = useState(false);
     const [unmountOnClose, setUnmountOnClose] = useState(true);
   
@@ -23,73 +23,101 @@ export default function
       let { value } = e.target;
       setUnmountOnClose(JSON.parse(value));
     };
+    const [isConnectionSuccessful, setIsConnectionSuccessful] = useState(false);
+
+    const testConnection = async (name, link, accessKey) => {
+      try {
+        const response = await fetch('/test-connection/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': 'your-csrf-token', // Replace with your CSRF token
+          },
+          body: JSON.stringify({ name, link, access_key: accessKey }),
+        });
   
-  
+        const data = await response.json();
+        if (response.ok) {
+          setIsConnectionSuccessful(true);
+        } else {
+          setIsConnectionSuccessful(false);
+        }
+      } catch (error) {
+        setIsConnectionSuccessful(false);
+      }
+    };
       return (
           <div>
           <div className="container-project mt-5">
           <div className="row ">
           <div className="col-lg-6">
-          <h1 className="title-project">Server</h1>
+          <h1 className="title-project">Code Sources</h1>
           <button className='btn-add-project'  onClick={toggle}>
           <i><Icon icon="material-symbols:add-box"  /></i>
-            Add Server
+            Add Code Sources
           </button>
         
-        <Modal className=" add-project-container mt-0 "  isOpen={modal} toggle={toggle} unmountOnClose={unmountOnClose}>
-      <ModalBody className='mt-0'> 
-        
-          <form className='.add-project-form'> 
-          <div className="mb-2">
-        <label for="ControlInput" className="form-label">Project Name</label>
-        <Input className="form-control" type="text" id="project-name" name="project-name" />
-      </div>
-      <div class="mb-2">
-        <label for="exampleFormControlTextarea1" className="form-label">Description</label>
-        <Input type="textarea" className="form-control textarea " id="project-description" name="project-description" rows="3" />
-      </div> 
-      </form>
-      </ModalBody>
-      <ModalFooter className='mt-5'>
-           
-            <button className="  cancel-button"   onClick={toggle}>
-              Cancel
-            </button>
-            <button className="  submit-button"  onClick={toggle}>
-              Submit
-            </button>{' '}
-          </ModalFooter>
-        </Modal>
+          <Modal className=" model  mt-0 " isOpen={modal} toggle={toggle} unmountOnClose={unmountOnClose}>
+    <ModalBody className='model-body mt-0'> 
+      
+        <form > 
+        <div className="mb-2">
+      <label for="ControlInput" className="form-label"> Name</label>
+      <Input className="form-control-model" type="text" id="name" name="name" />
+    </div>
+    <div className="mb-2">
+      <label for="ControlInput" className="form-label">Link</label>
+      <Input className="form-control-model" type="text" id="link" name="link" />
+    </div>
+    <div className="mb-2">
+      <label for="ControlInput" className="form-label">Access Key</label>
+      <Input className="form-control-model" type="text" id="accessKey" name="accessKey" />
+    </div>
+    <button className='btn-connection'
+    onClick={() => {
+          const name = document.getElementById('name').value;
+          const link = document.getElementById('link').value;
+          const accessKey = document.getElementById('accessKey').value;
+
+          testConnection(name, link, accessKey);
+        }}
+        style={{ backgroundColor: isConnectionSuccessful ? 'green' : 'blue' }}
+      >
+         Test Connection 
+          </button>
+    </form>
+    <form className='form-btn'>
+    <button className="  cancel-button"   onClick={toggle}>
+            Cancel
+          </button>
+          <button className="  submit-button"  onClick={toggle}>
+            Submit
+          </button>
+          </form>
+    </ModalBody>
+    
+      </Modal>
               
   
   
-  
+        <div className="code-container">
+      
+       
+        <input type="text" className="text-input-code" placeholder="" />
+        <input type="text" className="text-input-code" placeholder="" />
+        <input type="text" className="text-input-code" placeholder="" />
+        <input type="text" className="text-input-code" placeholder="" />
+        <input type="text" className="text-input-code" placeholder="" />
+    
+    </div>
   
   
   </div>
-      <div className="container-table">
-       
-      <table className="table table-server border  border-start-2 rounded-end-2">
-        <thead>
-          <tr>
-            <th>Server name</th>
-            <th>IP Address</th>
-            <th>Tags</th>
-            <th>Add Dates</th>
-            
-          </tr>
-        </thead>
-        <tbody>
-          
-        </tbody>
-      </table>
-    </div>
-          </div>
-            </div>
-            </div>
-            
+      
     
-        
+        </div>
+        </div>
+        </div>
       );
   };
   

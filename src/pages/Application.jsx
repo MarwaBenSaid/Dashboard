@@ -35,30 +35,31 @@ export default function Application() {
             Add new Application
           </button>
         
-        <Modal className=" add-project-container mt-0 "  isOpen={modal} toggle={toggle} unmountOnClose={unmountOnClose}>
-      <ModalBody className='mt-0'> 
-        
-          <form className='.add-project-form'> 
-          <div className="mb-2">
-        <label for="ControlInput" className="form-label">Project Name</label>
-        <Input className="form-control" type="text" id="project-name" name="project-name" />
-      </div>
-      <div class="mb-2">
-        <label for="exampleFormControlTextarea1" className="form-label">Description</label>
-        <Input type="textarea" className="form-control textarea " id="project-description" name="project-description" rows="3" />
-      </div> 
-      </form>
-      </ModalBody>
-      <ModalFooter className='mt-5'>
-           
-            <button className="  cancel-button"   onClick={toggle}>
-              Cancel
-            </button>
-            <button className="  submit-button"  onClick={toggle}>
-              Submit
-            </button>{' '}
-          </ModalFooter>
-        </Modal>
+          <Modal className=" model  mt-0 " isOpen={modal} toggle={toggle} unmountOnClose={unmountOnClose}>
+    <ModalBody className='model-body mt-0'> 
+      
+        <form > 
+        <div className="mb-2">
+      <label for="ControlInput" className="form-label">Project Name</label>
+      <Input className="form-control-model" type="text" id="project-name" name="project-name" />
+    </div>
+    <div class="mb-2">
+      <label for="exampleFormControlTextarea1" className="form-label">Description</label>
+      <Input type="textarea" className="form-control-model textarea " id="project-description" name="project-description" rows="3" />
+    </div> 
+    
+    </form>
+    <form className='form-btn'>
+    <button className="  cancel-button"   onClick={toggle}>
+            Cancel
+          </button>
+          <button className="  submit-button"  onClick={toggle}>
+            Submit
+          </button>
+          </form>
+    </ModalBody>
+    
+      </Modal>
               <div className="search-container ">
   
   <Input

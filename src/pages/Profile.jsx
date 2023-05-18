@@ -1,8 +1,14 @@
-import React from "react";
+import React , { useState }  from "react";
 import '../Styles/Profil.css';
+import { FaCamera } from 'react-icons/fa';
 
 
 function Profile(params) {
+    const [isEditing, setIsEditing] = useState(false);
+    const handleEditPicture = () => {
+        // Logic to handle editing the profile picture
+        console.log('Editing profile picture');
+      };
     return(
 <div>
 <div className="container-fluid">
@@ -10,6 +16,11 @@ function Profile(params) {
        <div className="card-profil">
          <div className="">
            <img className="img1" src="../assets/images/users/avatar-10.jpg" alt="Profile photo" />
+           {isEditing && (
+          <div className="edit-overlay">
+            <FaCamera className="camera-icon" onClick={handleEditPicture} />
+          </div>
+        )}
           </div>
           
              

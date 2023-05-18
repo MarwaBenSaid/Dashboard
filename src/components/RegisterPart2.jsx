@@ -1,12 +1,17 @@
-import React from 'react'
+import React from 'react';
+import '../Styles/Register.css';
+function RegisterPart2(){
 
-export default function 
-
-() {
-  return (
-    <div>
-
-<h2 className=" text-center mt-5">Create your password</h2>
+    return(
+        <div>
+        
+<div className="container-register mt-0">
+		<div className="card-login border-light ">
+     
+				<div className="row justify-content-center">
+                    <div className="col-lg-6 col-md-12">
+						<div className="padding">
+            <h2 className=" text-center mt-5">Create your password</h2>
 							
 							<form autocomplete="off">
                                
@@ -33,6 +38,36 @@ export default function
                                  
 								
 							</form>
-    </div>
-  )
+                                
+              
+						</div>
+                        
+					</div>
+					<div className="col-lg-6 col-md-12">
+                        <div className="padding  align-items-center ser ">
+
+                                     <img src="../assets/images/Serops-Logo.png" alt="" className="logo " />    
+                                     <img src="./assets/images/Serops-img.png" alt=""   className='img-ser'/>    
+						
+                                    
+							
+							
+								
+							
+
+					
+						</div>
+					</div>
+					
+				</div>
+            </div>
+    
+			</div>
+		
+            </div>
+	
+ 
+   )
 }
+
+export default RegisterPart2;

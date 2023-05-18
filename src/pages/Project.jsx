@@ -1,4 +1,6 @@
-import React , { useState } from 'react';
+import React , { useState ,  useEffect} from 'react';
+import axios from 'axios';
+
 import {
   Button,
   Modal,
@@ -12,11 +14,14 @@ import {
 } from 'reactstrap';
 import "../Styles/List.css";
 import "../Styles/Add.css"
+
 import { Icon } from '@iconify/react';
 
 const Project = () => {
   const [modal, setModal] = useState(false);
   const [unmountOnClose, setUnmountOnClose] = useState(true);
+  const [projects, setProjects] = useState([]);
+
 
   const toggle = () => setModal(!modal);
   const changeUnmountOnClose = (e) => {
@@ -24,7 +29,18 @@ const Project = () => {
     setUnmountOnClose(JSON.parse(value));
   };
 
+  useEffect(() => {
+    fetchProjects();
+  }, []);
 
+  const fetchProjects = async () => {
+    try {
+      const response = await axios.get('http://localhost:8000/projects/all');  //  Django API endpoint
+      setProjects(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
     return (
         <div>
         <div className="container-project mt-5">
@@ -36,29 +52,30 @@ const Project = () => {
           Add new Project
         </button>
       
-      <Modal className=" add-project-container mt-0 "  isOpen={modal} toggle={toggle} unmountOnClose={unmountOnClose}>
-    <ModalBody className='mt-0'> 
+      <Modal className=" model  mt-0 " isOpen={modal} toggle={toggle} unmountOnClose={unmountOnClose}>
+    <ModalBody className='model-body mt-0'> 
       
-        <form className='.add-project-form'> 
+        <form > 
         <div className="mb-2">
       <label for="ControlInput" className="form-label">Project Name</label>
-      <Input className="form-control" type="text" id="project-name" name="project-name" />
+      <Input className="form-control-model" type="text" id="project-name" name="project-name" />
     </div>
     <div class="mb-2">
       <label for="exampleFormControlTextarea1" className="form-label">Description</label>
-      <Input type="textarea" className="form-control textarea " id="project-description" name="project-description" rows="3" />
+      <Input type="textarea" className="form-control-model textarea " id="project-description" name="project-description" rows="3" />
     </div> 
+    
     </form>
-    </ModalBody>
-    <ModalFooter className='mt-5'>
-         
-          <button className="  cancel-button"   onClick={toggle}>
+    <form className='form-btn'>
+    <button className="  cancel-button"   onClick={toggle}>
             Cancel
           </button>
           <button className="  submit-button"  onClick={toggle}>
             Submit
-          </button>{' '}
-        </ModalFooter>
+          </button>
+          </form>
+    </ModalBody>
+    
       </Modal>
             <div className="search-container ">
 
@@ -75,55 +92,19 @@ const Project = () => {
 
 
 </div>
-            <div className="project-list">
-        
-          <div className="project-card">
-            <h5 className='card-title row' >Project Title
-            <i className="icon-card">
-            <Icon icon="uiw:setting"  />
-            </i> </h5>
-            <p> 
-            Lorem ipsum dolor sit amet consectetur. Lacinia at nunc a diam dictum curabitur non nisl.
-            </p>
-          </div>
-          <div className="project-card">
-            <h5 className='card-title row' >Project Title
-            <i className="icon-card">
-            <Icon icon="uiw:setting" />
-            </i> </h5>
-            <p>Lorem ipsum dolor sit amet consectetur. Lacinia at nunc a diam dictum curabitur non nisl.</p>
-          </div>
-          
-          <div className="project-card">
-            <h5 className='card-title row' >Project Title
-            <i className="icon-card">
-            <Icon icon="uiw:setting" />
-            </i> </h5>
-            <p>Lorem ipsum dolor sit amet consectetur. Lacinia at nunc a diam dictum curabitur non nisl.</p>
-          </div>
-          <div className="project-card">
-            <h5 className='card-title row' >Project Title
-            <i className="icon-card">
-            <Icon icon="uiw:setting"  />
-            </i> </h5>
-            <p>Lorem ipsum dolor sit amet consectetur. Lacinia at nunc a diam dictum curabitur non nisl.</p>
-          </div>
-          <div className="project-card">
-            <h5 className='card-title row' >Project Title
-            <i className="icon-card">
-            <Icon icon="uiw:setting"  />
-            </i> </h5>
-            <p mt-3>Lorem ipsum dolor sit amet consectetur. Lacinia at nunc a diam dictum curabitur non nisl.</p>
-          </div>
-          <div className="project-card">
-            <h5 className='card-title row' >Project Title
-            <i className="icon-card">
-            <Icon icon="uiw:setting" />
-            </i> </h5>
-            <p className="p mt-2">Lorem ipsum dolor sit amet consectetur. Lacinia at nunc a diam dictum curabitur non nisl.</p>
-          </div>
-          {/* Repeat project cards for each project */}
-        </div>
+<div className="project-list">
+  {projects.map(project => (
+    <div className="project-card" key={project.id}>
+      <h5 className="card-title row">
+        {project.title}
+        <i className="icon-card">
+          <Icon icon="uiw:setting" />
+        </i>
+      </h5>
+      <p>{project.description}</p>
+    </div>
+  ))}
+</div>
           </div>
           </div>
           

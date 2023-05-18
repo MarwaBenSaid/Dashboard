@@ -26,7 +26,7 @@
 .logo-sidebar{
     height: 70px;
     width: 120px;
-    margin-top: 0px;
+    margin-top: 20px;
     align-items: center; 
     margin-left:12px;
     font-size: 30px;
@@ -51,11 +51,12 @@
     gap: 15px;
     transition: all 0.5s;
     color: #99ABF0;
-    
+    margin-top: 5px;
     text-decoration: none;
 }
 .link:hover{
-    background:lightskyblue;
+    background: #FAFAFF;
+
     transition: all 0.5s;
 }
 .active{
